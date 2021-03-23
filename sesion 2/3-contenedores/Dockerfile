@@ -1,13 +1,13 @@
-# what operating system
+# OS
 FROM ubuntu
-# some metadata
+# metadata
 LABEL Description="Devops 101" Version="1.0"
-# install the packages
+# paquetes necesarios
 RUN apt-get update && apt-get install -y \
     graphite-carbon
-# which TCP port for carbon
+# el puerto que necesita graphite 
 EXPOSE 2003
-# where to write the data
+# donde dejar la data
 VOLUME /var/lib/graphite/whisper
-# --nodaemon because we'll detach in 'docker run'
+# --nodaemon 
 ENTRYPOINT /usr/bin/carbon-cache --config /etc/carbon/carbon.conf --nodaemon start
