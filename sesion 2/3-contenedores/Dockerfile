@@ -1,7 +1,7 @@
 # what operating system
 FROM ubuntu
 # some metadata
-LABEL Description="Mastering DevOps" Version="1.0"
+LABEL Description="Devops 101" Version="1.0"
 # install the packages
 RUN apt-get update && apt-get install -y \
     graphite-carbon
